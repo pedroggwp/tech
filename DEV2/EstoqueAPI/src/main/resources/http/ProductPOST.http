@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/products/create
+Content-Type: application/json
+
+{
+  "name": "Onion Rings",
+  "description": "The ideal snack to a friday night",
+  "price": 27.00,
+  "number": 40
+}

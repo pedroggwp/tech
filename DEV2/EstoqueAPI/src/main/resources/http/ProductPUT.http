@@ -1,0 +1,9 @@
+PUT http://localhost:8080/api/products/update/13
+Content-Type: application/json
+
+{
+  "name": "Onion Rings",
+  "description": "The ideal snack for the weekend",
+  "price": 30.00,
+  "number": "40"
+}
