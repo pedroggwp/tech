@@ -2,14 +2,26 @@ package com.example.estoqueapi.controller;
 
 import com.example.estoqueapi.model.Product;
 import com.example.estoqueapi.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.*;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.DataBinder;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -25,6 +37,27 @@ public class ProductController {
     }
 
     @GetMapping
+    @Operation(
+            summary = "List all products",
+            description = "Return a list of all available products"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "List all products returned with success",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = Product.class)
+                    )
+
+
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error",
+                    content = @Content
+            )
+    })
     public ResponseEntity<?> getAllProducts() {
         try {
             List<Product> products = productService.findAll();
