@@ -13,7 +13,6 @@ public class Transaction {
     private LocalDateTime dateTime;
 
     public Transaction() {}
-
     public Transaction(String type, Account origin, Account target, Double value, LocalDateTime dateTime) {
         this.type = type;
         this.origin = origin;
