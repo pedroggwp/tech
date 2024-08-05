@@ -5,8 +5,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* duas colunas uma fração e 3 frações */
-    grid-template-rows: auto 1fr auto; /* três linhas: altura automática, 1 fração, alltura automática */
+    grid-template-columns: 0.5fr 3fr; /* duas colunas uma fração e 3 frações */
+    grid-template-rows: auto 1fr auto; /* três linhas: altura automática, 1 fração, altura automática */
     grid-template-areas: 
     "header header"
     "sidebar content"
