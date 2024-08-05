@@ -49,8 +49,6 @@ public class ProductController {
                             mediaType = "application/json",
                             schema = @Schema(implementation = Product.class)
                     )
-
-
             ),
             @ApiResponse(
                     responseCode = "500",

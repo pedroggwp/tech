@@ -1,5 +1,6 @@
 package com.example.estoqueapi.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -9,6 +10,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+@Schema(description = "Representa um produto no sistema")
 @Entity
 @Table(name="produto")
 public class Product {
