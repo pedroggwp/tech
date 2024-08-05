@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
 }
-
 
 .grid-container {
     display: grid;
@@ -22,6 +22,7 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+    border: 1px solid red;
 }
 
 .sidebar {
@@ -30,20 +31,23 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+    border: 1px solid blue;
 }
 
-.content{
+.content {
     grid-area: content;
     background-color: lightgreen;
     color: white;
     padding: 20px;
     text-align: center;
+    border: 1px solid brown;
 }
 
-.footer{
+.footer {
     grid-area: footer;
     background-color: lightseagreen;
     color: white;
     padding: 20px;
-    text-align: center;
+    text-align: center;
+    border: 1px solid antiquewhite;
 }
