@@ -10,30 +10,36 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-@Schema(description = "Representa um produto no sistema")
+@Schema(description = "Represent a product in the system")
 @Entity
 @Table(name="produto")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique product ID", example = "33142")
     private Integer id;
 
     @Column(name="nome")
     @NotNull(message = "The name should be not null")
     @Size(min = 3, message = "The name should have more than 2 characters")
+    @Schema(description = "Product name", example = "Chicken Noodles")
     private String name;
 
     @Column(name="descricao")
+    @Schema(description = "Detailed product description", example = "Frozen Chicken Noodle 230g")
     private String description;
 
     @Column(name="preco")
     @NotNull(message = "The price should be not null")
     @Min(value = 0, message = "The price should not be lower than zero")
+    @Schema(description = "Product price", example = "3.50")
     private Double price;
 
     @Column(name="quantidadeestoque")
     @NotNull(message = "The storage number should be not null")
     @Min(value = 0, message = "The storage number should not be lower than zero")
+    @Schema(description = "Product quantity in the stock", example = "4")
     private Integer number;
 
     public Product() {}
