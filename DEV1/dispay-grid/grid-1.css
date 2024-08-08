@@ -1,53 +1,79 @@
+/* Garantir que o body não tenha margens */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    background-color: #F4F4F6;
 }
-
-.grid-container {
+ 
+/* Configuração do grid */
+.div-grid {
     display: grid;
-    grid-template-columns: 0.5fr 3fr; /* duas colunas uma fração e 3 frações */
-    grid-template-rows: auto 1fr auto; /* três linhas: altura automática, 1 fração, altura automática */
-    grid-template-areas: 
-    "header header"
-    "sidebar content"
-    "footer footer";
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    grid-template-rows: 2fr 1fr 4fr 3fr;
+    grid-template-areas:
+    "smallSquare rectangle rectangle rectangle"
+    "line line line line"
+    "square square square verticalLine"
+    "smallSquareLeft smallSquareMid smallSquareRight verticalLine";
     gap: 10px;
     padding: 10px;
-    background-color: bisque;
+    background-color: aliceblue;
 }
 
-.header {
-    grid-area: header;
-    background-color: aquamarine;
-    color: white;
-    padding: 20px;
+/* Configuração para as divs */
+#square, #rectangle, #line, #bigSquare, #verticalLine, #smallSquareLeft, #smallSquareMid, #smallSquareRight {
     text-align: center;
-    border: 1px solid red;
+    padding: 20px;
+    color: white;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    background-color: lightblue;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid blue;
+/* Configuração individual para cada div */
+#square {
+    grid-area: smallSquare;
+    background-color: #1976D2;
 }
 
-.content {
-    grid-area: content;
-    background-color: lightgreen;
-    color: white;
-    padding: 20px;
-    text-align: center;
+#rectangle {
+    grid-area: rectangle;
+    color: #1976D2;
+}
+
+#line {
+    grid-area: line;
+    border: 1px solid green;
+    background-color: #FFFFFF;
+}
+
+#bigSquare {
+    grid-area: square;
+    border: 1px solid gold;
+}
+
+#verticalLine {
+    grid-area: verticalLine;
+    border: 1px solid rebeccapurple;
+}
+
+#smallSquareLeft {
+    grid-area: smallSquareLeft;
     border: 1px solid brown;
 }
 
-.footer {
-    grid-area: footer;
-    background-color: lightseagreen;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid antiquewhite;
+#smallSquareMid {
+    grid-area: smallSquareMid;
+    border: 1px solid khaki;
+}
+
+#smallSquareRight {
+    grid-area: smallSquareRight;
+    border: 1px solid lawngreen;
+}
+
+/* Ajuste das imagens para não ultrapassarem os limites das divs */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem se ajuste dentro da div */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem dentro da div */
 }
